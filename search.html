@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		FC Barcelona Squad
+	</title>
+	<style>
+		h2{
+			font-family: sans-serif;
+			font-size: 250%;
+			text-align: center;
+			color: #ff3333;
+		}
+		h3{
+			font-family: sans-serif;
+			font-size: 100%;
+			text-align: center;
+		}
+		table{
+			color: white;
+			align-content: center;
+			align-items: center;
+			padding-left: 400px;
+			font-size: 130%;
+		}
+		th{
+			font-size: 150%;
+		}
+		p{
+			color:white;
+		}
+		.squad{
+			  position: absolute;
+			  top: 80%;
+			  left: 25%;
+			  transform: translate(-50%, -50%);
+			  color: white;
+		}
+		.img1{
+			width:200px;
+			border-radius: 10px;	
+			border-top-right-radius: 10px; 
+			padding-right: 70px;
+		}
+		.img3{
+			width: 40%;
+			height: 200px;
+			padding-left: 50px;
+		}
+		.top{
+			display: flex;
+			padding-left: 150px;
+			padding-bottom: 50px;
+			padding-top: 10px;			
+		}
+		.subhead{
+			font-size: 70%;
+			color: #000066;
+		}
+		.campnou{
+			width: 100%;
+			height: 650px;
+		}
+		.campnou{
+			top: 500px;
+			left: 500px;
+		}
+		p{
+			  position: absolute;
+			  top: 116%;
+			  left: 37%;
+			  transform: translate(-50%, -50%);
+			  color: white;
+			  font-size: 140%;			
+		}
+		.ip{
+			align-content: center;
+			width: 60%;
+			position: absolute;
+			left: 15%;
+			top: 38%;
+		}
+		.searchButton{
+			position: absolute;
+			top: 38%;
+			left: 73%;
+			color: black;
+			text-decoration-style: none;
+		}
+	</style>
+</head>
+<body bgcolor=#6699ff>
+	<div class="top">
+		<img src="C:\Users\cw\Documents\FE\Project\search\img1.jpg" class="img1">
+		<h2>Football Club <br>BARCELONA<br><div class="subhead"> Main Playing Squad</div></h2>
+		<img src="C:\Users\cw\Documents\FE\Project\search\img3.jpg" class="img3">
+	</div>
+	<input type="text" name="Name" placeholder="Search for a FCB player" onkeyup="searchPlayer()" class="ip" id="ip">
+	<button class="searchButton"><a href="#">Search</a></button>
+	<table class="squad" id="squad">
+		<tr>
+			<th>Player Name</th>
+			<th>Country</th>
+		</tr>
+		<tr>
+			<td>Lionel Messi</td>
+			<td>Argentina</td>
+		</tr>
+		<tr>
+			<td>Luis Suarez</td>
+			<td>Uruguay</td>
+		</tr>
+		<tr>
+			<td>Phillipe Coutinho</td>
+			<td>Brazil</td>
+		</tr>
+		<tr>
+			<td>Ousmane Dembele</td>
+			<td>France</td>
+		</tr>
+		<tr>
+			<td>Malcom Viera</td>
+			<td>Brazil</td>
+		</tr>
+		<tr>
+			<td>Sergio Busquets</td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td>Frenkie De Jung</td>
+			<td>Netherlands</td>
+		</tr>
+		<tr>
+			<td>Arthur Melo</td>
+			<td>Brazil</td>
+		</tr>
+		<tr>
+			<td>Ivan Rakitic</td>
+			<td>Croatia</td>
+		</tr>
+		<tr>
+			<td>Arturo Vidal</td>
+			<td>Chile</td>
+		</tr>
+		<tr>
+			<td>Carles Alena</td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td>Gerrad Pique</td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td>Jordi Alba</td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td>Samuel Umtiti</td>
+			<td>France</td>
+		</tr>
+		<tr>
+			<td>Clement Lenglet</td>
+			<td>France</td>
+		</tr>
+		<tr>
+			<td>Nelson Semedo</td>
+			<td>Portugal</td>
+		</tr>
+		<tr>
+			<td>Sergi Roberto</td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td>Marc Andre Ter Stegen</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Jasper Cillesen</td>
+			<td>Netherlands</td>
+		</tr>
+	</table>
+	<p>Manager : Ernesto Valverde</p>
+	<img src="C:\Users\cw\Documents\FE\Project\search\img2.jpg" class="campnou">
+	<h3>Camp Nou, C.d'Aristides Maillol,12,08028 Bracelona,Spain</h3>
+</body>
+<script>
+function searchPlayer() 
+{ 
+  var input, filter, table, trow, tdata, i, Value;
+  input = document.getElementById("ip");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("squad");
+  trow = table.getElementsByTagName("tr");
+  for (i = 0; i < trow.length; i++) 
+  {
+    tdata = trow[i].getElementsByTagName("td")[0];
+    if (tdata) 
+    {
+      Value = tdata.textContent || tdata.innerText;
+      if (Value.toUpperCase().indexOf(filter) > -1) 
+      {
+        trow[i].style.display = "";
+      } 
+      else {
+        trow[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+</html>
